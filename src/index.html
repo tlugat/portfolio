@@ -9,12 +9,8 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Téo Lugat</title>
     <script defer src="javascript/landing.js"></script>
-    <script defer src="javascript/particles.js"></script>
-    <script defer src="javascript/app.js"></script>
-    <script defer src="javascript/particles.min.js"></script>
   </head>
   <body>
-    <div class="particles" id="particles-js"></div>
     <header class="hero">
       <svg width="61" height="53" viewBox="0 0 61 53" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6.952 19.808C6.952 19.808 6.976 20.84 8.2 20.84C9.568 20.84 13.336 19.784 15.352 19.784C16.12 19.784 16.624 19.928 16.648 20.36C14.488 24.632 9.808 32.912 3.808 32.912C3.28 32.912 2.728 32.84 2.176 32.696C1.432 32.696 0.904 33.056 0.904 33.392C0.904 33.536 1 33.656 1.192 33.776C2.104 34.28 3.688 34.664 5.704 34.664C7.816 34.664 10.36 34.256 13.144 33.128C20.776 30.032 24.568 22.376 30.664 13.568C30.904 13.208 31.048 12.824 31.048 12.464C31.048 11.84 30.616 11.36 29.632 11.36C23.728 11.36 18.568 12.08 13.6 12.08C13.024 12.08 12.424 12.152 11.968 12.584C10.96 13.496 6.976 18.56 6.952 19.808Z" fill="black"/>
@@ -139,7 +135,52 @@
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
       >
-        <div class="date-wrapper real">
+        <span class="date-wrapper real">
+          <img
+            class="picture"
+            srcset="
+              ./assets/street-food-small.png  183w,
+              ./assets/street-food-medium.png 233w,
+              ./assets/street-food-large.png  305w
+            "
+            sizes="(max-width: 767px) 183w, (max-width: 1024px) 233w 305w"
+            src="./assets/street-food-small.png"
+            alt="astronaut with fantastic background, red planet"
+          />
+        </span>
+
+        <div class="article__ficheWrapper">
+          <div class="article__fiche">
+            <h2 class="secondary-title">
+              <a href="https://human-race-hetic.netlify.app">Street-food</a>
+            </h2>
+            <div class="article__ficheText">
+              <p>
+                <span class="letter">D'</span>où la street food tire-t-elle ses origines ? Street food et haute gastronomie ça va ensemble ?
+                <br />
+                Le webdocumentaire <span>Street food</span> répond à vos questions sur les cantines de rue et leur évolution.
+              </p>
+              <br />
+              <p>Vue.js - Sass</p>
+            </div>
+          </div>
+          <div class="links-wrapper">
+            <div class="article__links">
+              <a href="https://human-race-hetic.netlify.app">Site web</a>
+              <a href="https://github.com/hugoborini/hetic-wp2020-08-halo"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
+      </article>
+      <article
+        class="work__article article work__article article--right"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+      >
+        <div class="date-wrapper date-wrapper--right">
           <img
             class="picture"
             srcset="
@@ -152,7 +193,7 @@
             alt="kissing people with masks"
           />
         </div>
-        <div class="article__ficheWrapper">
+        <div class="article__ficheRight">
           <div class="article__fiche">
             <h2 class="secondary-title">
               <a href="https://abcov.netlify.app">AbCov</a>
@@ -170,8 +211,8 @@
               <p>HTML - Javascript - Sass</p>
             </div>
           </div>
-          <div class="links-wrapper">
-            <div class="article__links">
+          <div class="links-wrapper links-wrapper--right">
+            <div class="article__linksRight">
               <a href="https://abcov.netlify.app">Site web</a>
               <a href="https://github.com/tlugat/AbCov">Github</a>
             </div>
@@ -179,12 +220,12 @@
         </div>
       </article>
       <article
-        class="work__article article work__article article--right "
-        data-aos="fade-right"
+        class="work__article article  "
+        data-aos="fade-left"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
       >
-        <span class="date-wrapper date-wrapper--right ">
+        <span class="date-wrapper real ">
           <img
             class="picture"
             srcset="
@@ -197,7 +238,7 @@
             alt="naruto"
           />
         </span>
-        <div class="article__ficheRight">
+        <div class="article__ficheWrapper">
           <div class="article__fiche">
             <h2 class="secondary-title">Soranime</h2>
             <div class="article__ficheText">
@@ -214,8 +255,8 @@
               <p>HTML - Pug - Javascript - Sass</p>
             </div>
           </div>
-          <div class="links-wrapper links-wrapper--right">
-            <div class="article__linksRight">
+          <div class="links-wrapper">
+            <div class="article__links">
               <a>Site web</a>
               <a href="https://github.com/tlugat/Soranime">Github</a>
             </div>
@@ -223,12 +264,12 @@
         </div>
       </article>
       <article
-        class="work__article article "
-        data-aos="fade-left"
+        class="work__article article work__article article--right"
+        data-aos="fade-right"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
       >
-        <div class="date-wrapper">
+        <div class="date-wrapper date-wrapper--right">
           <img
             class="picture"
             srcset="
@@ -241,7 +282,7 @@
             alt="a blue bag"
           />
         </div>
-        <div class="article__ficheWrapper">
+        <div class="article__ficheRight">
           <div class="article__fiche">
             <h2 class="secondary-title">
               <a href="https://maison-longoza.netlify.app">Maison Longoza</a>
@@ -262,8 +303,8 @@
               <p>HTML - Javascript - Sass</p>
             </div>
           </div>
-          <div class="links-wrapper">
-            <div class="article__links">
+          <div class="links-wrapper links-wrapper--right">
+            <div class="article__linksRight">
               <a href="https://maison-longoza.netlify.app">Site web</a>
               <a href="https://github.com/tlugat/maison-longoza">Github</a>
             </div>
@@ -271,12 +312,12 @@
         </div>
       </article>
       <article
-        class="work__article article work__article article--right"
-        data-aos="fade-right"
+        class="work__article article"
+        data-aos="fade-left"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
       >
-        <span class="date-wrapper date-wrapper--right">
+        <span class="date-wrapper real">
           <img
             class="picture"
             srcset="
@@ -290,7 +331,7 @@
           />
         </span>
 
-        <div class="article__ficheRight">
+        <div class="article__ficheWrapper">
           <div class="article__fiche">
             <h2 class="secondary-title">
               <a href="https://human-race-hetic.netlify.app">Human Race</a>
@@ -309,8 +350,8 @@
               <p>HTML - Javascript - Sass</p>
             </div>
           </div>
-          <div class="links-wrapper links-wrapper--right">
-            <div class="article__linksRight">
+          <div class="links-wrapper">
+            <div class="article__links">
               <a href="https://human-race-hetic.netlify.app">Site web</a>
               <a href="https://github.com/hugoborini/hetic-wp2020-08-halo"
                 >Github</a
