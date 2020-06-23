@@ -6,12 +6,14 @@ const $nav = document.querySelector(".hero__navbar");
 const $navBtn = document.querySelector("#burger");
 const $articles = document.querySelectorAll(".article");
 const $navItems = document.querySelectorAll(".hero__navbar a");
+const $textSquares = document.querySelectorAll(".home__titleContainer");
 
 $navItems.forEach((a) => a.addEventListener("click", () => activeMenu()));
 const activeMenu = () => {
   $nav.classList.toggle("active");
   $navBtn.classList.toggle("active");
   $articles.forEach((article) => article.classList.toggle("hidden"));
+  $textSquares.forEach((square) => square.classList.toggle("hidden"));
 };
 $navBtn.addEventListener("click", activeMenu);
 
@@ -32,6 +34,8 @@ function offset(el) {
   return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
 }
 
-document.querySelector(".container").addEventListener("mousemove", function(e) {
-  parallaxIt(e, this.querySelector("h1"), this, 80);
-});
+document.querySelectorAll(".container").forEach((container) =>
+  container.addEventListener("mousemove", function(e) {
+    parallaxIt(e, this.querySelector("h1"), this, 80);
+  })
+);

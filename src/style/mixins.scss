@@ -36,23 +36,7 @@ $black2: #272727;
     @content;
   }
 }
-@mixin before($content, $top) {
-  &::before {
-    content: $content;
-    font-size: 40px;
-    font-weight: 500;
-    color: rgba(46, 70, 177, 0.2);
-    position: absolute;
-    top: $top;
-    z-index: -2;
-    @include medium {
-      font-size: 60px;
-    }
-    @include large {
-      font-size: 70px;
-    }
-  }
-}
+
 @mixin blue-square($top, $right, $bottom, $left, $width, $height) {
   position: absolute;
   height: $height;
@@ -77,5 +61,28 @@ $black2: #272727;
     font-style: normal;
     font-size: $font-size;
     transform: $transform;
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
