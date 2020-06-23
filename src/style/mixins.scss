@@ -1,0 +1,81 @@
+$black: #2d2d2d;
+$black2: #272727;
+
+@mixin font-title {
+  font-family: bely-display, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin small {
+  @media (min-width: 550px) {
+    @content;
+  }
+}
+@mixin medium {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin large {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin xlarge {
+  @media (min-width: 1366px) {
+    @content;
+  }
+}
+@mixin xxlarge {
+  @media (min-width: 1500px) {
+    @content;
+  }
+}
+@mixin xxxlarge {
+  @media (min-width: 1820px) {
+    @content;
+  }
+}
+@mixin before($content, $top) {
+  &::before {
+    content: $content;
+    font-size: 40px;
+    font-weight: 500;
+    color: rgba(46, 70, 177, 0.2);
+    position: absolute;
+    top: $top;
+    z-index: -2;
+    @include medium {
+      font-size: 60px;
+    }
+    @include large {
+      font-size: 70px;
+    }
+  }
+}
+@mixin blue-square($top, $right, $bottom, $left, $width, $height) {
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  background: #3c9cd7;
+  z-index: -1;
+  transition: 0.4s ease-in-out;
+}
+@mixin date($bottom, $right, $left, $font-size, $transform) {
+  &::after {
+    content: "2020";
+    position: absolute;
+    bottom: $bottom;
+    right: $right;
+    left: $left;
+    font-family: bely-display, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: $font-size;
+    transform: $transform;
+  }
+}

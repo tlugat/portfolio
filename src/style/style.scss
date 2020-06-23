@@ -1,60 +1,4 @@
-@import "normalize";
-
-$black: #2d2d2d;
-$black2: #272727;
-
-@mixin font-title {
-  font-family: bely-display, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-@mixin small {
-  @media (min-width: 550px) {
-    @content;
-  }
-}
-@mixin medium {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
-@mixin large {
-  @media (min-width: 1024px) {
-    @content;
-  }
-}
-@mixin xlarge {
-  @media (min-width: 1366px) {
-    @content;
-  }
-}
-@mixin xxlarge {
-  @media (min-width: 1500px) {
-    @content;
-  }
-}
-@mixin xxxlarge {
-  @media (min-width: 1820px) {
-    @content;
-  }
-}
-@mixin before($content, $top) {
-  &::before {
-    content: $content;
-    font-size: 40px;
-    font-weight: 500;
-    color: rgba(46, 70, 177, 0.2);
-    position: absolute;
-    top: $top;
-    z-index: -2;
-    @include medium {
-      font-size: 60px;
-    }
-    @include large {
-      font-size: 70px;
-    }
-  }
-}
+@import "./mixins.scss";
 
 body {
   font-family: freight-neo-pro, sans-serif;
@@ -87,12 +31,20 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
   @include large {
     padding: 2rem;
   }
   svg {
     @media (max-width: 1024px) {
       padding: 1rem;
+    }
+  }
+  .spicy {
+    display: flex;
+    .home__gifContainer {
+      width: 24px;
+      height: 24px;
     }
   }
   &__navbar {
@@ -206,30 +158,46 @@ body {
 }
 
 .home {
-  height: 90vh;
+  height: 80vh;
   padding: 1rem;
   color: $black;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   &__titleContainer {
-    width: 100%;
+    z-index: -1;
+    height: 100%;
+    @include large {
+      // display: flex;
+      transform: translateY(-15vh);
+    }
+    span {
+      color: #3c9cd7;
+    }
   }
   @include medium() {
     margin-left: 2rem;
   }
+  &__gifContainer {
+    display: flex;
+    align-items: flex-end;
+  }
   &__title {
     @include font-title();
-    font-size: 80px;
+    font-size: 50px;
     color: $black2;
 
     @include small {
-      font-size: 110px;
+      font-size: 70px;
     }
     @include medium {
-      font-size: 140px;
+      font-size: 80px;
     }
     @include large {
-      font-size: 180px;
+      font-size: 100px;
+    }
+    @include xlarge {
+      font-size: 120px;
     }
   }
 }
@@ -259,6 +227,7 @@ body {
   line-height: 150%;
   position: relative;
   z-index: -1;
+  margin-top: 4rem;
   @include medium {
     z-index: 0;
     display: flex;
@@ -284,7 +253,7 @@ body {
   }
   &__citation {
     display: none;
-    @include large {
+    @include xlarge {
       position: absolute;
       background: #fafafa;
       padding: 0.5rem;
@@ -295,10 +264,43 @@ body {
     }
   }
 }
+.parallaxit {
+  transition: 0.6s transform ease-out;
+  transform: translate3d(var(--parallax-x), var(--parallax-y), 0px);
+}
+
+.blue-square {
+  @include blue-square(-1rem, null, null, -1rem, 6rem, 6rem);
+  @include medium() {
+    @include blue-square(null, null, -1rem, -1rem, 100%, 100%);
+  }
+}
+.blue-square--right {
+  @include blue-square(-1rem, -1rem, null, null, 6rem, 6rem);
+  @include medium {
+    @include blue-square(null, -1rem, -0.5rem, null, 100%, 100%);
+  }
+}
+
+.date-wrapper--left {
+  position: relative;
+
+  @include medium() {
+    @include date(4rem, -4rem, null, 48px, rotate(90deg));
+  }
+}
+.date-wrapper--right {
+  position: relative;
+  @include medium {
+    @include date(4rem, null, -4rem, 48px, rotate(270deg));
+  }
+}
 
 .picture {
   height: 230px;
   margin-bottom: 1rem;
+  position: relative;
+
   @include small() {
     height: 250px;
     margin-bottom: 0;
@@ -334,7 +336,11 @@ body {
       color: #3c9cd7;
     }
   }
+  svg {
+    transition: 0.4s;
+  }
 }
+
 .skills {
   margin-bottom: 2rem;
   @include medium {
@@ -499,6 +505,9 @@ body {
 .work {
   overflow: hidden;
   padding-top: 2.5rem;
+}
+.article:first-child {
+  @include before("REALISATIONS", -2rem);
 }
 .article--right {
   text-align: right;
