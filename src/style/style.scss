@@ -168,16 +168,22 @@ body {
     z-index: -1;
     height: 100%;
     @include large {
-      // display: flex;
       transform: translateY(-15vh);
     }
     span {
       color: #3c9cd7;
+      &:nth-child(3) {
+        color: #87e752;
+        margin-left: 3rem;
+        font-size: 36px;
+        @include small {
+          margin-left: 0;
+          font-size: 50px;
+        }
+      }
     }
   }
-  @include medium() {
-    margin-left: 2rem;
-  }
+
   &__gifContainer {
     display: flex;
     align-items: flex-end;

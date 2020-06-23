@@ -34,22 +34,4 @@ function offset(el) {
 
 document.querySelector(".container").addEventListener("mousemove", function(e) {
   parallaxIt(e, this.querySelector("h1"), this, 80);
-  parallaxIt(e, this.querySelector(".home__gifContainer"), this, 60);
 });
-
-const $blueSquare = document.querySelector(".blue-square");
-// const $arrowCv = document.querySelector(".arrowWrapper");
-// $arrowCv.addEventListener("mouseover", () => {
-//   $arrowCv.querySelector("svg").style.width = "8rem";
-//   $arrowCv.querySelector("svg").style.height = "1rem";
-// });
-
-// $articles.forEach((article) =>
-//   article
-//     .querySelector(".picture")
-//     .addEventListener("mouseover", () => blueSquareAnimation())
-// );
-
-// const blueSquareAnimation = () => {
-//   $blueSquare.classList.toggle("spicy");
-// };
