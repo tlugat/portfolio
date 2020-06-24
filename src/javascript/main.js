@@ -39,3 +39,5 @@ document.querySelectorAll(".container").forEach((container) =>
     parallaxIt(e, this.querySelector("h1"), this, 80);
   })
 );
+
+console.log(typeof 42);
