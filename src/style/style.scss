@@ -67,6 +67,11 @@ body {
       height: auto;
       width: auto;
     }
+    .logo {
+      @include medium {
+        display: none;
+      }
+    }
     a {
       padding: 2rem;
       font-size: 16px;
@@ -169,6 +174,7 @@ body {
   color: $black;
   position: relative;
   width: 100%;
+
   &__robot {
     display: flex;
     justify-content: center;
@@ -178,6 +184,8 @@ body {
     transform: translate(-50%, -50%);
     @include large {
       overflow: hidden;
+      top: 40%;
+      transform: translate(-50%, -40%);
     }
 
     h1 {
@@ -203,6 +211,9 @@ body {
         top: null;
         opacity: 0;
         font-size: 50px;
+      }
+      span {
+        color: #3c9cd7;
       }
     }
     h1.active {
@@ -241,7 +252,9 @@ body {
     bottom: 2.5%;
     left: 50%;
     transform: translateX(-50%);
-    // animation: jump 0.4s ease-in-out infinite;
+    svg {
+      animation: jump 1s ease-in-out infinite;
+    }
   }
 }
 .nameContainer {
