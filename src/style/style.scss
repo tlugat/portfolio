@@ -171,63 +171,75 @@ body {
   height: 80vh;
   padding: 1rem 0;
   color: $black;
-
-  &__titleContainer {
-    z-index: -1;
-    height: 40%;
-    overflow: hidden;
+  position: relative;
+  &__robot {
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: #060606;
-    margin-bottom: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     @include large {
-      transform: translateY(-5vh);
+      overflow: hidden;
     }
-    &:nth-child(3) {
-      height: 20%;
-      background: lightgreen;
-      .home__title {
-        font-size: 20px;
-        text-align: center;
+
+    h1 {
+      position: absolute;
+      top: -25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include font-title();
+      color: $black2;
+      width: 100%;
+      line-height: 150%;
+      text-align: center;
+      transition: 0.5s;
+      font-size: 26px;
+      @include large {
+        transform: translate(-50%, -100%);
+        z-index: -1;
+        top: null;
+        opacity: 0;
+        font-size: 50px;
       }
     }
-    span {
-      color: #3c9cd7;
-      &:nth-child(3) {
-        color: #87e752;
-        margin-left: 3rem;
-        font-size: 36px;
-        @include small {
-          margin-left: 0;
-          font-size: 50px;
-        }
+    h1.active {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    img.active {
+      @include large {
+        transform: translateX(100%);
+      }
+    }
+    img.active:first-child {
+      @include large {
+        transform: translateX(-100%);
+      }
+    }
+    img {
+      transform: translateY(0);
+      transition: 0.4s;
+      width: 100%;
+      @include small {
+        width: 50%;
+      }
+      @include large {
+        width: 40%;
+      }
+      &:first-child {
+        margin-right: 1rem;
       }
     }
   }
-
-  &__gifContainer {
-    display: flex;
-    align-items: flex-end;
-  }
-  &__title {
-    @include font-title();
-    font-size: 50px;
-    color: $black2;
-
-    @include small {
-      font-size: 60px;
-    }
-    @include medium {
-      font-size: 70px;
-    }
-    @include large {
-      font-size: 80px;
-    }
-    // @include xlarge {
-    //   font-size: 100px;
-    // }
+  &__scrollLogo {
+    position: absolute;
+    bottom: 2.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    // animation: jump 0.4s ease-in-out infinite;
   }
 }
 .nameContainer {

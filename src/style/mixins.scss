@@ -86,3 +86,12 @@ $black2: #272727;
     transform: translate3d(4px, 0, 0);
   }
 }
+
+@keyframes jump {
+  50% {
+    transform: translateY(1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

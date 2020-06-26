@@ -7,6 +7,18 @@ const $navBtn = document.querySelector("#burger");
 const $articles = document.querySelectorAll(".article");
 const $navItems = document.querySelectorAll(".hero__navbar a");
 const $textSquares = document.querySelectorAll(".home__titleContainer");
+const $robot = document.querySelector(".home__robot");
+
+if (window.innerWidth >= 1024) {
+  $robot.addEventListener("mouseover", () => toggleRobotAnimation());
+  $robot.addEventListener("mouseout", () => toggleRobotAnimation());
+}
+const toggleRobotAnimation = () => {
+  $robot
+    .querySelectorAll("img")
+    .forEach((image) => image.classList.toggle("active"));
+  $robot.querySelector("h1").classList.toggle("active");
+};
 
 $navItems.forEach((a) => a.addEventListener("click", () => activeMenu()));
 const activeMenu = () => {
@@ -39,5 +51,3 @@ document.querySelectorAll(".container").forEach((container) =>
     parallaxIt(e, this.querySelector("h1"), this, 80);
   })
 );
-
-console.log(typeof 42);
